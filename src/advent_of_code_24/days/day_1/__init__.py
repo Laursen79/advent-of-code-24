@@ -1,16 +1,17 @@
 from collections import Counter
+from functools import cache
 from pathlib import Path
 
-
+@cache
 def get_lists() -> (int, int):
     file_loc = Path(__file__).parent / "input.txt"
     right = []
     left = []
     with open(file_loc, "r") as file:
         for line in file.readlines():
-            nums = line.split()
-            right.append(int(nums[0]))
-            left.append(int(nums[1]))
+            r, l = line.split()
+            right.append(int(r))
+            left.append(int(l))
     return right, left
 
 def task_1():
