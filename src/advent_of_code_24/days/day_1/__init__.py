@@ -2,6 +2,7 @@ from collections import Counter
 from functools import cache
 from pathlib import Path
 
+
 @cache
 def get_lists() -> (int, int):
     file_loc = Path(__file__).parent / "input.txt"
@@ -14,6 +15,7 @@ def get_lists() -> (int, int):
             left.append(int(l))
     return right, left
 
+
 def task_1():
     left, right = get_lists()
     pairs = list(zip(sorted(right), sorted(left)))
@@ -22,6 +24,7 @@ def task_1():
         answer.append(abs(right - left))
 
     print(sum(answer))
+
 
 def task_2():
     left, right = get_lists()
