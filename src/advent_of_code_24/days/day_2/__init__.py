@@ -25,6 +25,7 @@ def is_safe(report: list[int]) -> bool:
             return False
     return True
 
+
 def is_safe_fast(report: list[int]) -> bool:
     prev_diff = 0
     for i in range(len(report) - 1):
